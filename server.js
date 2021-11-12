@@ -59,23 +59,24 @@ app.post('/delUser', (req, res) => {
         success: false
     }
 
-        let sql = 'DELETE FROM User WHERE id = (?)'
+    let sql = 'DELETE FROM User WHERE id = (?)'
 
-        db.run(sql, [data], (er) => {
-            if (data) {
-                if (er) {
-                    console.log(er)
-                    resObj.msg = er.msg
-                } else {
-                    resObj.success = true
-                }
+    db.run(sql, [data], (er) => {
+        if (data) {
+            console.log(data)
+            if (er) {
+                console.log(er)
+                resObj.msg = er.msg
             } else {
-                resObj.msg = 'id is undefined'
+                resObj.success = true
             }
+        } else {
+            resObj.msg = 'id is undefined'
+        }
 
-            res.send(JSON.stringify(resObj))
+        res.send(JSON.stringify(resObj))
 
-        })
+    })
 })
 
 

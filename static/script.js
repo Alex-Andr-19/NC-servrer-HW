@@ -1,3 +1,5 @@
+let lastNum;
+
 function logging(msg, _flag='log') {
     let p = document.createElement('p')
     p.classList.add('logSpan')
@@ -40,7 +42,7 @@ function genUsersTable(data) {
         '            <th>E-mail</th>\n' +
         '            <th>Phone number</th>\n' +
         '        </tr>'
-    let lastNum;
+
 
     data.forEach(user => {
         let row = document.createElement('tr');
@@ -104,10 +106,27 @@ function addUser() {
 
 }
 
+function validateDel(id) {
+    let table = document.getElementById('usersTable').children
+    let res = false
+
+    for (let i = 1; i < table.length - 1; i++) {
+        console.log(table[i].children[0].innerText === id)
+        if (Number(table[i].children[0].innerText) === Number(id)) {
+            res = true
+            break
+        }
+    }
+
+    return res
+}
+
 function delUser() {
     let userId = document.getElementById('delUserNum').value
+    let correct = validateDel(userId)
 
-    if (userId)
+    if (!correct) { logging('ID is not correct', 'er') }
+    else {
         fetch('/delUser', {
             method: 'POST',
             headers: {
@@ -119,8 +138,9 @@ function delUser() {
                 console.log(json)
                 if (json.success) getAllUsers(genUsersTable);
                 logging(json.msg)
+                console.log('Here')
             });
-    else logging('ID is not defined', 'er')
+    }
 }
 
 window.addEventListener('load', () => getAllUsers(genUsersTable));
