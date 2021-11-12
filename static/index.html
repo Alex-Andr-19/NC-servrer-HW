@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Main</title>
+</head>
+<body>
+    <h1>Users Table</h1>
+
+    <table id="usersTable">
+
+    </table>
+
+    <div class="apiBlock">
+        <button id="setUser" onclick="addUser()">Set User</button>
+        <br>
+        <div class="delBlock">
+            <input type="text" id="delUserNum" placeholder="ID">
+            <button id="delUser" onclick="delUser()">Delete User</button>
+        </div>
+
+
+        <textarea name="usersJson" id="usersJson" cols="30" rows="10"></textarea>
+        <button id="getUsers" onclick="getUsersObj()">Get Users JSON</button>
+    </div>
+
+    <div id="errorBlock" class="visible">
+        <h2>Logging:</h2>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

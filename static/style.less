@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@200&display=swap');
+
+.devBorder() { border: 2px solid red }
+.contentWidth() { width: 40% }
+
+table {
+  .contentWidth();
+
+  margin: 1em 0;
+
+  border-spacing: 0;
+
+  tr {
+    border-bottom: 2px solid grey;
+
+    &.firstLine th {
+      border-bottom: 3px solid black;
+      //background: darkgray;
+
+      //color: white;
+    }
+
+    &:nth-child(2n) {
+      background: lightgray;
+    }
+
+    &:last-child td {
+      border: none
+    }
+
+    td:first-child, th {
+      text-align: center;
+    }
+
+    td:not(:first-child) {
+      padding-left: 1em;
+    }
+  }
+
+}
+
+.apiBlock {
+  .contentWidth();
+
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: inherit;
+  }
+
+  #getUsers {
+    margin-top: 1em;
+  }
+
+  #setUsers {
+    margin-bottom: 2em;
+  }
+
+  #delUser {
+    width: 30%;
+  }
+  #delUserNum {
+    width: 8%;
+  }
+
+  textarea {
+    margin-top: 1em;
+  }
+
+}
+
+#errorBlock {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+
+  width: 25%;
+  min-height: 4em;
+
+  padding: 1em;
+
+  background: #555555;
+  border-radius: 15px;
+  border: 5px solid #312f2f;
+
+  color: white;
+  font-family: 'Encode Sans Semi Condensed', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    padding-bottom: 6px;
+
+    border-bottom: 3px solid white;
+  }
+
+  .er {
+    color: lightcoral;
+  }
+}
+

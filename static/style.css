@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Encode Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/encodesanssemicondensed/v5/3qT7oiKqnDuUtQUEHMoXcmspmy55SFWrXFRp9FTOG1RZ1eFH.ttf) format('truetype');
+}
+table {
+  width: 40%;
+  margin: 1em 0;
+  border-spacing: 0;
+}
+table tr {
+  border-bottom: 2px solid grey;
+}
+table tr.firstLine th {
+  border-bottom: 3px solid black;
+}
+table tr:nth-child(2n) {
+  background: lightgray;
+}
+table tr:last-child td {
+  border: none;
+}
+table tr td:first-child,
+table tr th {
+  text-align: center;
+}
+table tr td:not(:first-child) {
+  padding-left: 1em;
+}
+.apiBlock {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.apiBlock button {
+  width: inherit;
+}
+.apiBlock #getUsers {
+  margin-top: 1em;
+}
+.apiBlock #setUsers {
+  margin-bottom: 2em;
+}
+.apiBlock #delUser {
+  width: 30%;
+}
+.apiBlock #delUserNum {
+  width: 8%;
+}
+.apiBlock textarea {
+  margin-top: 1em;
+}
+#errorBlock {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 25%;
+  min-height: 4em;
+  padding: 1em;
+  background: #555555;
+  border-radius: 15px;
+  border: 5px solid #312f2f;
+  color: white;
+  font-family: 'Encode Sans Semi Condensed', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+#errorBlock h2 {
+  padding-bottom: 6px;
+  border-bottom: 3px solid white;
+}
+#errorBlock .er {
+  color: lightcoral;
+}
+/*# sourceMappingURL=style.css.map */
